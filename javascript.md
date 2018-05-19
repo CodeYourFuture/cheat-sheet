@@ -1,10 +1,10 @@
 # Javascript Cheat Sheet
 
-A small primer on the syntax and rules seen so far
+A small primer on the syntax and rules seen so far.
 
 ## Basics
 
-The ground rules for the Javascript language
+The ground rules for the Javascript language.
 
 ### Comments
 
@@ -137,16 +137,111 @@ Comparison:
 1 <= 1  // smaller or equal, true
 ```
 
+## Execution flow
 
-flow
-    if
-    loops
-    functions
+Logic required to direct the flow of a program.
+
+### If Statements
+
+If statements allow conditional execution of code depending on a initial condition.
+
+Simple if/else:
+``` js
+var condition = true;
+
+if (condition) {
+    console.log('"condition" is true');
+} else {
+    console.log('"condition" is false');
+}
+```
+
+Additional else if statement:
+``` js
+var number = 1;
+
+if (number === 0) {
+    console.log('"number" is 0');
+} else if (number === 1) {
+    console.log('"number" is 1');
+} else {
+    console.log('"number" is neither 0 or 1');
+}
+```
+
+A if/else statement can also be simplified with a ternary operator:
+``` js
+var condition = true;
+
+condition ? console.log('"condition" is true') : console.log('"condition" is false')
+```
+
+### Loops
+
+Loops allow multiple exections of the same piece of code.
+
+``` js
+for (iteration = 0; iteration < 5; iteration++) {
+    console.log('hello, iteration = ' + iteration);
+}
+```
+
+``` js
+var iteration = 0;
+while (iteration < 10) {
+    console.log('hello, iteration = ' + iteration);
+    iteration = iteration + 1;
+}
+```
+
+### Functions
+
+Functions enclose a block of code, executing it only when invoked/called. They are used to package piece of code and allow for it to be called an used several times.
+
+Simple functions:
+``` js 
+// define the function without executing the code in it
+function myFunction() {
+    console.log('Hello World');
+}
+
+// invoke the function and execute it
+myFunction();
+```
+
+Function parameters:
+``` js
+function addNumbers(a, b) {
+    var result = a + b;
+    console.log('The result is: ', result);
+}
+
+// function can be invoked multiple times with different values
+addNumbers(1, 4);
+addNumbers(5, 5);
+```
+
+Function return value:
+``` js
+function returnAddedNumbers(a, b) {
+    var result = a + b;
+    return result;
+}
+
+// function will return a value that can be assigned to a variable for further use
+var returnedValue = returnAddedNumbers(1, 1);
+console.log('the returned value is: ', returnedValue);
+```
+
+
+
+
 
 advanced
     scope
     function reference
     callback
+    map/reduce
     promises
     template literals
 
