@@ -1,0 +1,1 @@
+This repo contains few files that can act as a syntax reference for the technology that you've seen in the course.
