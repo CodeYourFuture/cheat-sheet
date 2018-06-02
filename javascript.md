@@ -299,22 +299,76 @@ function myFunction() {
 console.log(myVariable);  // 'outer'
 ```
 
+### Map
 
+Map is a method of Array objects that returns a new array. Each element of the new array is the result of the given callback applied to the corresponding element of the old array.
 
+``` js
+function doubleNumber(num) {
+    return num * 2;
+}
 
-advanced
-    map/reduce
-    promises
+var oldArray = [1, 2, 3];
+
+var newArray = oldArray.map(doubleNumber);  // the callback is a reference to the 'double' function
+
+console.log(newArray);  // [2, 4, 6]
+```
+
+### Reduce
+
+Redude is a method of Array objects that returns a single value. Reduce iterates over each element and applies the given callback. The callback accepts 2 param, the current element and the accumulator, which is the result of the last iteration. The final value of the accumulator is the return value.
+
+``` js
+function addToAccumulator(accumulator, number) {
+    return accumulator + number;
+}
+
+var oldArray = [1, 2, 3];
+
+var result = oldArray.reduce(addToAccumulator);
+
+console.log(result);  // 6, which is 1 + 2 + 3
+
+```
+
+### Promises
+
+Promises are a way to deal with asyncronous code, like http calls, without resorting to huge amounts of callbacks and deeply nested code. 
+
+``` js
+function successCallback(response) {
+    console.log('promise resolved with response:', response);
+}
+
+function failureCallback(error) {
+    console.log('promise rejected with error:', error);
+}
+
+fetch('www.example.com')  // the fetch command returns a promise
+    .then(successCallback)  // specify function to call on success
+    .catch(failureCallback);  // specify function to call on failure
+```
+
+Promise chaining:
+``` js
+fetch('www.example.com')
+    .then(function(response) {
+        return response.status;  // return values are passed as argument to the next 'then' element
+    })
+    .then(function(status) {
+        console.log('status code is:', status);
+    })
+```
+
 
 es6
-    const
-    let
+    const / let
     arrow functions
-        template literals
-
+    template literals
 
 style
-    naming and case
+    naming a2nd case
     spacing
     semicolons
     indent
