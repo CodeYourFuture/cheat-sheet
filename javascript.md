@@ -16,9 +16,9 @@ A comment is a piece of text that will be skipped by the interpreter. It's usefu
 
 ``` js
 /*
-    dash + star are a 
+    multiline comments a
     useful way
-    to do multine comments
+    to have long pieces of text
     without having to comment each line
 */
 ```
@@ -233,22 +233,85 @@ var returnedValue = returnAddedNumbers(1, 1);
 console.log('the returned value is: ', returnedValue);
 ```
 
+## Advanced concepts
+
+Extra concepts and rules useful for writing non-trivial javascript code.
+
+### Function reference
+
+A _reference_ to a function can be assigned to a variable. This is helpful to pass the reference around without executing the function itself.
+
+``` js
+function sayHello(name) {
+    console.log('Hello, ' + name);
+}
+
+var functionReference = sayHello;  // note how the function is not called here
+
+functionReference('your name');  // sayHello is executed here
+```
+
+### Callbacks
+
+Callback is the conventional name for a function reference passed to a function as a parameter. It's not a keyword or reserved word in Javascript.
+
+``` js
+function printNumber(number) {
+    console.log('the number is ' + number);
+}
+
+function mainFunction(callback) { 
+    var result = 1 + 2;
+
+    callback(result);  // invoke the function passed as parameter with the result. printNumber(result) is executed here
+}
+
+mainFunction(printNumber);  // printNumber passed as a function reference
+```
+
+### Scope
+
+Variables are not 'visible' to all the code, but follow certain rules. Variables with the same names can exists in different contexts and have different values.
+
+``` js
+var outerVariable = 'outer';
+
+function myFunction() {
+    var innerVariable = 'inner';
+
+    console.log(outerVariable, innerVariable);  // both are defined
+}
+
+console.log(outerVariable, innerVariable);  // innerVariable is undefined, as its scope is only the function body (between the {})
+```
+
+Variable name shadowing
+
+``` js
+var myVariable = 'outer';
+
+function myFunction() {
+    var myVariable = 'inner';
+
+    console.log(myVariable);  // 'inner'
+}
+
+console.log(myVariable);  // 'outer'
+```
 
 
 
 
 advanced
-    scope
-    function reference
-    callback
     map/reduce
     promises
-    template literals
 
 es6
     const
     let
     arrow functions
+        template literals
+
 
 style
     naming and case
