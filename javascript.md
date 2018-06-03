@@ -4,27 +4,27 @@ A small primer on the syntax and rules seen so far.
 
 ## Table of Contents
 * Basics
-    * [Comments](###Comments)
-    * [Data Types](###Data-Types)
-    * [Variables and Assignment](###Variables-and-Assignment)
-    * [Logging](###Logging)
-    * [Operators](###Operators)
+    * [Comments](#comments)
+    * [Data Types](#data-types)
+    * [Variables and Assignment](#variables-and-assignment)
+    * [Logging](#logging)
+    * [Operators](#operators)
 * Execution Flow
-    * [If Statements](###If-Statements)
-    * [Loops](###Loops)
-    * [Functions](###Functions)
+    * [If Statements](#if-statements)
+    * [Loops](#loops)
+    * [Functions](#functions)
 * Advanced Concepts
-    * [Function reference](###Function-reference)
-    * [Callbacks](###Callbacks)
-    * [Scope](###Scope)
-    * [Map](###Map)
-    * [Reduce](###Reduce)
-    * [Promises](###Promises)
+    * [Function reference](#function-reference)
+    * [Callbacks](#callbacks)
+    * [Scope](#scope)
+    * [Map](#map)
+    * [Reduce](#reduce)
+    * [Promises](#promises)
 * ES6 / ES2015
-    * [Let](###Let)
-    * [Const](###Const)
-    * [Template Literals](###Template-Literals)
-    * [Arrow Functions](###Arrow-Functions)
+    * [Let](#let)
+    * [Const](#const)
+    * [Template Literals](#template-literals)
+    * [Arrow Functions](#arrow-functions)
 
 ## Basics
 
