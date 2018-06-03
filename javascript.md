@@ -361,18 +361,93 @@ fetch('www.example.com')
     })
 ```
 
+## ES6 / ES2015
 
-es6
-    const / let
-    arrow functions
-    template literals
+New syntax and features introduced in the modern version of Javascript, not available in older browsers or version of node.
 
-style
-    naming a2nd case
-    spacing
-    semicolons
-    indent
-    shortcuts
 
-misc
-    js vs node vs chrome
+### Let
+
+Let declares a value, similar to the `var` statement, but with a block rather than global scope.
+
+``` js
+if (true) {
+    var myVar = 1;
+}
+console.log(myVar);  // 1
+
+if (true) {
+    let myLet = 1;
+}
+console.log(myLet);  // not defined
+```
+
+### Const
+
+Declares a constant value with the same scoping rules as `let`. Can't be redefined or assigned a new value. The check is carried only on the root reference, so child elements of a array/object can still be manipulated.
+
+``` js
+const myConstant = 1;
+
+const myConstant = 2;  // will throw an error due to attemped redefinition
+
+myConstant = 3;  // will throw an error due to attemped assignment
+```
+
+Reassignment of nested elements is valid:
+``` js
+const myArray = [1,2,3];
+myArray[0] = 5;
+console.log(myArray);  // [5,2,3]
+
+const myObject = { a: 1, b: 2 };
+myObject.b = 5;
+console.log(myObject);  // { a: 1, b: 5 }
+```
+
+### Template Literals
+
+String interpolation, allowing for easier dynamic string creation.
+
+``` js
+const myName = 'Person';
+
+const interpolatedString = `Hello ${myName}! 1 plus 1 is equal to ${1 + 1}`;
+
+console.log(interpolatedString);  // 'Hello Person! 1 plus 1 is equal to 2
+```
+
+### Arrow Functions
+
+Arrow functions are special functions that are commonly used due to the more concise form over classical functions.
+They do not have their own `this`, `arguments`, `super` and `target.new` values, leading to some simplications in more advanced JS code.
+
+``` js
+const doubleClassic = function(number) {
+    return number * 2;
+}
+
+const doubleV1 = (number) => {
+    return number * 2;
+}
+
+const doubleV2 = number => {  // single arguments do not require parentheses around it
+    return number * 2;
+}
+
+const doubleV3 = number => number * 2;  // single line function body do not require curly braces, and the return value is implicit.
+
+/* all 4 functions are equivalent */
+```
+
+
+## TODO:
+* style
+    * naming a2nd case
+    * spacing
+    * semicolons
+    * indent
+    * shortcuts
+
+* misc
+    * js vs node vs chrome
