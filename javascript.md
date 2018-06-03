@@ -2,6 +2,30 @@
 
 A small primer on the syntax and rules seen so far.
 
+## Table of Contents
+* Basics
+    * [Comments](###Comments)
+    * [Data Types](###Data-Types)
+    * [Variables and Assignment](###Variables-and-Assignment)
+    * [Logging](###Logging)
+    * [Operators](###Operators)
+* Execution Flow
+    * [If Statements](###If-Statements)
+    * [Loops](###Loops)
+    * [Functions](###Functions)
+* Advanced Concepts
+    * [Function reference](###Function-reference)
+    * [Callbacks](###Callbacks)
+    * [Scope](###Scope)
+    * [Map](###Map)
+    * [Reduce](###Reduce)
+    * [Promises](###Promises)
+* ES6 / ES2015
+    * [Let](###Let)
+    * [Const](###Const)
+    * [Template Literals](###Template-Literals)
+    * [Arrow Functions](###Arrow-Functions)
+
 ## Basics
 
 The ground rules for the Javascript language.
